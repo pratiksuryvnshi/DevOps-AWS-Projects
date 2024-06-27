@@ -6,13 +6,15 @@ AWS account
 AWS IAM user 'devops-admin' user created with administrator access
 workstation server or local server - Git installed - Optional Or you can use laptop
 
+---------------------------------------------------------------------------------------
+
 End-End CI/CD Devployment of Java Project on Elastic-Beanstalk
 ==============================================================
 ![image](https://github.com/pratiksuryvnshi/DevOps-AWS-Projects/assets/90375660/4f8620a8-4197-43d4-b31d-d9f74f93a764)
 
 
-Lab - AWS DevOps - Elastic Beanstalk - Java App
-================================================
+Lab - STEPS TO IMPLEMENTATION OF PROJECT
+========================================
 
 Note: All AWS operations should be done with "devops-admin" IAM user. Hence login to AWS console with "devops-admin" user. 
 
@@ -33,7 +35,7 @@ Elastic Beanstalk
 IAM
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Creating Repository in AWS CodeCommit ***
 =========================================
@@ -43,7 +45,7 @@ IAM
 3. Enter Repository Name - "aws-devops-ebs-java-repo"
 4. Click on Create
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Creating IAM User to Access the CodeCommit Repository ***
 ============================================================
@@ -63,7 +65,7 @@ OR
 8. In section - HTTPS Git credentials for AWS CodeCommit, Click on generate credential button
 9. Note down the username and password displayed in notepad and close the window. This credential will be used for check-in in to code commit.
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Clonning CodeCommit Repo into locally
 =========================================
@@ -84,7 +86,7 @@ e.g. git clone <URL>
 
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Configuring CodeArtifact ***  
 ================================
@@ -98,7 +100,7 @@ e.g. git clone <URL>
 7. Click on create repository
 
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Configuring CodeBuild ***
 ============================
@@ -127,7 +129,7 @@ You may observe error during creation about - bucket already exists - Please cre
 17. Verify the logs and build job should be successful
 18. Verify that artifacts are also uploaded to S3 bucket - aws-devops-ebs-java-s3-artifacts   	- Verify war file is uploaded to S3 bucket
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Configuring Code Pipeline job with Dev/Prod Elastic beanstalk environment ***
 ============================================================================
@@ -167,7 +169,7 @@ Similarly, create one more environment with name as - aws-devops-ebs-java-prod
 Please note - Access Elastic beanstalk URL as below
 https://<URL>/demo
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Configuring Production EBS environment into pipeline ***
 ============================================================
@@ -184,7 +186,7 @@ https://<URL>/demo
 10. Application Name - aws-devops-ebs-java-prod
 11. Enronment Name - aws-devops-ebs-java-prod
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Add Manual Approval before Prod Deploy ***
 ==============================================
@@ -199,7 +201,7 @@ https://<URL>/demo
 8. Keep all other options default -> Done
 9. Click on save and click on save again on dialog box
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Configure Notification Rule on pipeline ***
 ===============================================
@@ -281,7 +283,7 @@ https://docs.aws.amazon.com/dtconsole/latest/userguide/set-up-sns.html
 5. Copy above policy and paste in Access Policy section by deleting existing policy
 6. Click on Save changes
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** Add Notification Rule To Pipeline ***
 ==========================================
@@ -294,7 +296,7 @@ https://docs.aws.amazon.com/dtconsole/latest/userguide/set-up-sns.html
 6. In choose target, select - aws-devops-ebs-java-topic
 7. Click on Submit
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 *** End To End AWS DevOps Pipeline Verification ***
 ====================================================
@@ -326,7 +328,8 @@ Access URL as - https://URL/demo
 
 8. Similarly, repeat the steps with new change, verify all the above mentioned validation points
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
