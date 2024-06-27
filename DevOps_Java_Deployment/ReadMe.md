@@ -6,6 +6,10 @@ AWS account
 AWS IAM user 'devops-admin' user created with administrator access
 workstation server or local server - Git installed - Optional Or you can use laptop
 
+End-End CI/CD Devployment of Java Project on Elastic-Beanstalk
+==============================================================
+![image](https://github.com/pratiksuryvnshi/DevOps-AWS-Projects/assets/90375660/4f8620a8-4197-43d4-b31d-d9f74f93a764)
+
 
 Lab - AWS DevOps - Elastic Beanstalk - Java App
 ================================================
