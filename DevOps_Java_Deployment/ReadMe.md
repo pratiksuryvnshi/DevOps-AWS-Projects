@@ -1,5 +1,5 @@
 
-## Pre-Requisites ##
+# Pre-Requisites #
 
 
 AWS account 
@@ -37,7 +37,7 @@ IAM
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Creating Repository in AWS CodeCommit ***
+ Creating Repository in AWS CodeCommit
 =========================================
 
 1. Login to AWS console and go to CodeCommit service
@@ -47,7 +47,7 @@ IAM
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Creating IAM User to Access the CodeCommit Repository ***
+ Creating IAM User to Access the CodeCommit Repository 
 ============================================================
 
 Follow the below URL or steps mentioned below
@@ -67,7 +67,7 @@ OR
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Clonning CodeCommit Repo into locally
+ Clonning CodeCommit Repo into locally
 =========================================
 
 Note - You can use your laptop as well instead of EC2 workstation
@@ -88,8 +88,8 @@ e.g. git clone <URL>
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Configuring CodeArtifact ***  
-================================
+ Configuring CodeArtifact 
+==========================
 
 1. Login to AWS console and go to CodeArtifact service.
 2. click on Create Repository
@@ -102,7 +102,7 @@ e.g. git clone <URL>
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Configuring CodeBuild ***
+ Configuring CodeBuild 
 ============================
 
 Please note - Create one bucket in Mumbai region with name - aws-devops-ebs-java-s3-artifacts.
@@ -131,7 +131,7 @@ You may observe error during creation about - bucket already exists - Please cre
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Configuring Code Pipeline job with Dev/Prod Elastic beanstalk environment ***
+ Configuring Code Pipeline job with Dev/Prod Elastic beanstalk environment 
 ============================================================================
 
 Please note - Before configuring code deploy, we need to create target elastic beanstalk dev and prod environments
@@ -171,8 +171,8 @@ https://<URL>/demo
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Configuring Production EBS environment into pipeline ***
-============================================================
+ Configuring Production EBS environment into pipeline 
+=======================================================
 
 1. Go to pipeline - > Select pipeline - aws-devops-ebs-java-pipeline
 2. Click on edit
@@ -188,8 +188,8 @@ https://<URL>/demo
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Add Manual Approval before Prod Deploy ***
-==============================================
+ Add Manual Approval before Prod Deploy 
+=======================================
 
 1. Go to pipeline -> Select pipeline - aws-devops-ebs-java-pipeline
 2. Click on edit
@@ -203,8 +203,8 @@ https://<URL>/demo
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Configure Notification Rule on pipeline ***
-===============================================
+ Configure Notification Rule on pipeline 
+============================================
 
 First need to create SNS Topic
 -----------------------------
@@ -285,8 +285,8 @@ https://docs.aws.amazon.com/dtconsole/latest/userguide/set-up-sns.html
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** Add Notification Rule To Pipeline ***
-==========================================
+ Add Notification Rule To Pipeline 
+==================================
 
 1. Go to pipeline -> select pipeline -> Click on notify -> Click Create Notification Rule
 2. Enter Name - aws-devops-ebs-java-pipeline-notification
@@ -298,8 +298,8 @@ https://docs.aws.amazon.com/dtconsole/latest/userguide/set-up-sns.html
 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*** End To End AWS DevOps Pipeline Verification ***
-====================================================
+ End To End AWS DevOps Pipeline Verification 
+============================================
 
 1. Go to workstation and login with ec2-user. Switch to root - sudo su
 2. Run command - cd /home/ec2-user/aws-devops-ebs-java/src/main/webapp
@@ -314,7 +314,7 @@ https://docs.aws.amazon.com/dtconsole/latest/userguide/set-up-sns.html
 
 
 Validation Points
-----------------
+-----------------
 
 1. All job status should be successful
 2. Verify Dev Elastic bean URL working with new code change
